@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8"/>
+	<title>Myntkast</title>
+	<script>
+	  window.onload = oppstart;
+	  
+	  function oppstart()	{
+	    document.getElementById("start").style.display="block"; // Div - start synlig
+		document.getElementById("kast").style.display="none";
+		document.getElementById("stopp").style.display="none";
+		document.getElementById("knapp1").onclick=start;
+	  }
+	
+	 function start()	{
+	    document.getElementById("start").style.display="none";
+		document.getElementById("stopp").style.display="none";
+		document.getElementById("kast").style.display="block";
+		document.getElementById("knapp2").onclick=resultat;
+	 }
+	 
+	 function resultat()	{
+	  document.getElementById("kast").style.display="none"; //Skjuler "kast"-div
+	  document.getElementById("stopp").style.display="block"; //Viser "stop"-div
+	  
+	  var trekk=Math.random(); 	
+	  
+	  if (trekk < 0.5 )	{
+		document.getElementById("resultat").src="krone.jpg";
+	  }	
+	  else  {
+		document.getElementById("resultat").src="mynt.jpg";
+	  }	
+     document.getElementById("myntkast").onclick=start;	  
+	 }	 
+	</script>
+  </head>
+ <body>
+	 <h1>Her kommer endring  # 1 </h1><br>
+	 <h1>Her kommer endring # 2 i versjon 2 </h1>
+	 <h1>Denne endringen her kommer i gren 4 </h1>
+	<div id="start"> 
+		<img id="krone" src="krone.jpg"  style="width:800px"><br>
+	</div>
+	<div id="kast"> 
+		<img src="myntkast.gif" style="width:800px"><br>
+	</div>
+	<div id="stopp"> 
+		<img id="resultat" >
+	</div>
+	<button id="knapp1">Kast</button>
+	<button id="knapp2">Stopp</button>
+ </body>
+</html>
+	
